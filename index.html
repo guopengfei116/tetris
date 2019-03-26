@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            height: 20px;
+        }
+        .game {
+            margin-left: 10px;
+            width: 200px;
+            height: 400px;
+            border: 1px solid blueviolet;
+        }
+        .aside {
+            position: absolute;
+            top: 10px;
+            left: 220px;
+        }
+        .aside > div:first-child {
+            width: 80px;
+            height: 80px;
+            border: 1px solid blueviolet;
+        }
+        .aside > div:last-of-type {
+            border: 1px solid transparent;
+        }
+
+        .block-none, .block-done, .block-next, .block-current {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 20px;
+            height: 20px;
+        }
+        .block-done {
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .block-next, .block-current {
+            background-color: pink;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <section class="game"></section>
+    <aside class="aside">
+        <div class="aside_next"></div>
+        <div class="aside_info">
+            <p>累计用时<span class="aside_info_time">0s</span></p>
+            <p>累计得分<span class="aside_info_score">0</span>分</p>
+        </div>
+    </aside>
+    <script src="js/util.js"></script>
+    <script src="js/collide.js"></script>
+    <script src="js/square_shape.js"></script>
+    <script src="js/square.js"></script>
+    <script src="js/game.js"></script>
+    <script>
+        new Game();
+    </script>
+</body>
+</html>
